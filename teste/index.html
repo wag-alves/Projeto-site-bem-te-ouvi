@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Formulário com Barra de Progresso</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- Barra de Progresso -->
+        <div class="progress-container">
+            <div class="progress-bar-bg">
+                <div class="progress-bar-fill" id="progress"></div>
+            </div>
+            <div class="steps">
+                <div class="step active">1</div>
+                <div class="step">2</div>
+                <div class="step">3</div>
+            </div>
+        </div>
+
+        <!-- Formulário multi-etapas -->
+        <form id="form">
+            <div class="form-step active">
+                <h2>Etapa 1</h2>
+                <input type="text" placeholder="Nome">
+                <button type="button" class="next">Próximo</button>
+            </div>
+
+            <div class="form-step">
+                <h2>Etapa 2</h2>
+                <input type="email" placeholder="Email">
+                <div class="button-group">
+                    <button type="button" class="prev">Voltar</button>
+                    <button type="button" class="next">Próximo</button>
+                </div>
+            </div>
+
+            <div class="form-step">
+                <h2>Etapa 3</h2>
+                <input type="password" placeholder="Senha">
+                <div class="button-group">
+                    <button type="button" class="prev">Voltar</button>
+                    <button type="submit">Enviar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

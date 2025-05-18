@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Formulário de cadastro</title>
+</head>
+
+<body>
+    <div id="container-bird">
+        <img src="./imagens/Bird.png" alt="imagem de um pássaro" id="bird">
+    </div>
+    <h1>Entrar no Bem-te-ouvi</h1>
+    <hr>
+    <div class="progress-container">
+        <div class="progress-bar" id="progress-bar">
+        </div>
+    </div>
+    <div class="container">
+        <div class="horizontal-line">
+            <a href="./index.html">
+                <img src="./imagens/back.png" alt="imagem de voltar" id="back">
+            </a>
+            <div class="text-container">
+                <h3>Etapa 1 de 3</h3>
+                <h3>Entre ou Crie um perfil</h3>
+            </div>
+        </div>
+    </div>
+    <div class="container-form">
+        <form action="./cadastro2.html" method="POST" autocomplete="on">
+            <div class="input-container">
+                <label for="email" >Email:</label><br>
+                <input type="email" id="email" placeholder="nome@dominio.com" name="email" required>
+            </div>
+            <div class="input-container">
+                <label for="password">Senha:</label><br>
+                <input type="password" id="password" placeholder="" name="password" required>
+            </div>
+            <button type="submit" class="submit-button">Próximo</button>
+        </form>
+    </div>
+</body>
+
+</html>

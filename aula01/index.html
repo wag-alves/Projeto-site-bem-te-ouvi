@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mídias em HTML5</title>
+</head>
+
+<body>
+    <h1>
+        Imagem dinâmica
+    </h1>
+    <p>
+        Tente abrir esse site em vários dispositivos diferentes e veja como a imagem se adapta ao tamanho da tela.
+    </p>
+    <picture> <!-- A tag picture é usada para especificar várias fontes
+        para uma imagem específica, permitindo que o navegador escolha a melhor
+        fonte para o dispositivo do usuário. -->
+        <!-- A ORDEM IMPORTA!!!!!!!!!!!!!! -->
+        <source media="(max-width: 730px)" srcset="https://corhexa.com/png/300x300/112288">
+        <!-- Se eu estivesse usando uma imagem que eu tenho tem que botar "type="image/png"" -->
+        <source media="(max-width: 1030px)" srcset="https://corhexa.com/png/700x700/aabbaa">
+        <img src="https://corhexa.com/png/1000x1000/aabbcc" alt="Imagem flexível">
+    </picture>
+
+    <h1>
+        Reproduzindo áudio
+    </h1>
+    <p>
+        Vamos aprender a reproduzir áudios em HTML5.
+    </p>
+    <audio src="./midia/Sweaty Staredown - The Soundings.mp3" autoplay controls></audio>
+    <!-- Dependendo do navegador a música não toca, então tem que ter áudio em todos os formatos.
+    MP3 WAV OGG -->
+    <!-- Tem esse outro modo de fazer... -->
+    <audio autoplay controls preload="metadata" loop>
+        <!-- OBS: A ordem importa... -->
+        <source src="./midia/Sweaty Staredown - The Soundings.mp3" type="audio/mpeg">
+        <source src="./midia/Sweaty Staredown - The Soundings.wav" type="audio/wav">
+        <!-- EVITAR USAR POIS É PESADO O WAV... -->>
+        <source src="./midia/Sweaty Staredown - The Soundings.ogg" type="audio/ogg">
+        <p>Infelizmente seu navegador não suporta o áudio... <a
+                href="./midia/Sweaty Staredown - The Soundings.mp3">Clique aqui para baixar o vídeo!</a></p>
+    </audio>
+    <!-- <video src="./midia/12919604_3840_2160_60fps.mp4" width="500" controls></video> -->
+    <!-- O poster serve para deixar uma imagem padrão antes de começar o vídeo -->
+    <video poster="./midia/pexels-lisa-yakurim-40702902-29849738.jpg" controls width="500">
+        <source src="./midia/12919604_3840_2160_60fps.mp4" type="video/mp4">
+        <source src="./midia/Big Buck Bunny.webm" type="video/webm">
+        <source src="./midia/Big Buck Bunny.ogv" type="video/ogg">
+    </video>
+</body>
+
+</html>

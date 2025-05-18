@@ -1,0 +1,90 @@
+body{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background: linear-gradient(135deg, #0d1b2a, #1b263b, #2e2e54);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+#container-bird{
+    display: flex;
+    justify-content: center;
+}
+
+#bird{
+    margin-top: 0.6rem;
+    width: 4rem;
+    transition: transform 0.3s ease-in-out;
+}
+
+#bird:hover{
+    transform: scale(1.06);
+    filter: brightness(1.1);
+} 
+
+h1{
+    text-align: center;
+    margin-top: 0;
+}
+
+hr{
+    width: 70%;
+    max-width: 1300px;
+    margin: 0 auto;
+    border: 1px solid rgba(77, 77, 77, 0.183);
+}
+
+.progress-container{
+    width: 40%;
+    margin-top: 1.3rem;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 900px;
+    background-color: rgba(77, 77, 77, 0.183);
+    border-radius: 25px;
+    overflow: hidden;
+}
+
+.progress-bar{
+    background-color: #94C0D3;
+    width: 33.3%;
+    height: 0.17rem;
+    transition: width 0.3s ease-in-out;
+}
+
+a{
+    text-decoration: none;
+}
+
+#back{
+    width: 2rem;
+    transition: transform 0.3s ease-in-out;    
+}
+
+a:hover #back{
+    transform: scale(1.06) rotate(-2deg);
+    filter: brightness(1.1);
+}
+
+.text-container h3{
+    margin: 0.4rem;
+    font-size: 1rem;
+    color: white;
+}
+
+.horizontal-line{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.container {
+    width: 41%;
+    max-width: 900px;
+    margin: 0 auto;
+}
