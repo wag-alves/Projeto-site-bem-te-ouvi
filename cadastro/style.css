@@ -16,7 +16,7 @@ body{
 }
 
 #bird{
-    margin-top: 0.6rem;
+    margin-top: 1.6rem;
     width: 4rem;
     transition: transform 0.3s ease-in-out;
 }
@@ -28,6 +28,7 @@ body{
 
 h1{
     text-align: center;
+    font-size: 1.7rem;
     margin-top: 0;
 }
 
@@ -39,8 +40,8 @@ hr{
 }
 
 .progress-container{
-    width: 40%;
-    margin-top: 1.3rem;
+    width: 35%;
+    margin-top: 1.5rem;
     margin-left: auto;
     margin-right: auto;
     max-width: 900px;
@@ -72,8 +73,8 @@ a:hover #back{
 
 .text-container h3{
     margin: 0.4rem;
-    font-size: 1rem;
-    color: white;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.754);
 }
 
 .horizontal-line{
@@ -83,8 +84,105 @@ a:hover #back{
     gap: 0.3rem;
 }
 
-.container {
-    width: 41%;
+.container1 {
+    width: 35%;
     max-width: 900px;
     margin: 0 auto;
+}
+
+.container-form1{
+    width: 20%;
+    max-width: 900px;
+    margin: 2.7rem auto 0 auto;
+}
+
+#email{
+    margin-bottom: 1.4rem;
+}
+
+.input-container input {
+    width: 100%;
+    border: none;
+    outline: 1px solid white;
+    margin-top: 0.1rem;
+    padding: 0.5rem 0.4rem; /* padding horizontal mais equilibrado */
+    border-radius: 0.3rem;
+    font-size: 1rem;
+    box-sizing: border-box;
+    text-align: left; /* garante alinhamento do texto/placeholder */
+    background-color: rgba(255, 255, 255, 0);
+    transition: all 450ms ease-in-out;
+}
+
+.input-container input:focus-within {
+    outline: 1px solid #5ac8fa;
+    background-color: rgba(255, 255, 255, 0.886);
+}
+
+  /* Placeholder personalizado (opcional) */
+.input-container input::placeholder {
+    color: #51515170;
+    text-align: left;
+}
+
+.input-container label{
+    margin-left: 0.3rem;
+}
+  
+  /* Melhor aparência do botão */
+.submit-button {
+    width: 100%;
+    padding: 0.7rem 1.5rem;
+    border: none;
+    border-radius: 2rem;
+    background-color: #5ac8fa;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.required-password{
+    font-size: 1rem;
+    list-style: none;
+    margin-top: 0.4rem;
+    margin-bottom: 1.6rem;
+}
+
+p{
+    margin: 0.5rem 0 0.2rem 0.3rem;
+    font-size: 0.9rem;
+    color: white;
+}
+
+.color-text{
+    vertical-align: middle;
+    display: inline-block;
+    color: #fd6868d3;
+}
+
+li:has(.ball.ok) .color-text {
+    color: white;
+}
+
+.required-password li{
+    margin-bottom: 0.37em;
+    display: flex;
+    align-items: center;
+}
+
+.ball{
+    width: 0.6rem;
+    height: 0.6rem;
+    margin-right: 0.1rem;
+    border-radius: 50%;
+    border: 2px solid #aaa;
+    background-color: transparent;
+    transition: background 0.3s, border 0.3s;
+}
+
+.ball.ok{
+    width: 1.2rem;
+    height: 1.2rem;
+    border: none;
+    background-image: url(./imagens/Approval.png);
 }

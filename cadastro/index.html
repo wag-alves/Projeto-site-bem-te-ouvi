@@ -14,11 +14,13 @@
     </div>
     <h1>Entrar no Bem-te-ouvi</h1>
     <hr>
+
     <div class="progress-container">
-        <div class="progress-bar" id="progress-bar">
+        <div class="progress-bar" id="progress-bar1">
         </div>
     </div>
-    <div class="container">
+
+    <div class="container1">
         <div class="horizontal-line">
             <a href="./index.html">
                 <img src="./imagens/back.png" alt="imagem de voltar" id="back">
@@ -29,19 +31,47 @@
             </div>
         </div>
     </div>
-    <div class="container-form">
-        <form action="./cadastro2.html" method="POST" autocomplete="on">
+
+    <!-- AQUI COMEÇA PRIMEIRO FORMULÁRIO -->
+    <div class="container-form1">
+        <form action="" method="" autocomplete="on">
             <div class="input-container">
                 <label for="email" >Email:</label><br>
                 <input type="email" id="email" placeholder="nome@dominio.com" name="email" required>
             </div>
             <div class="input-container">
                 <label for="password">Senha:</label><br>
-                <input type="password" id="password" placeholder="" name="password" required>
+                <input type="password" id="password" name="password" required>
             </div>
+            <p>A senha deve ter pelo menos:</p>
+            <ul class="required-password">
+                <li id="letter">
+                    <span class="ball">
+                    </span>
+                    <span class="color-text">
+                        1 Letra
+                    </span>
+                </li>
+                <li id="characters">
+                    <span class="ball">
+                    </span>
+                    <span class="color-text">
+                        10 Caracteres
+                    </span>
+                </li>
+                <li id="special">
+                    <span class="ball">
+                    </span>
+                    <span class="color-text">
+                        1 Número ou caractere especial<br> (Ex: ! @ # $ % ^ & *)
+                    </span>
+                </li>
+            </ul>
             <button type="submit" class="submit-button">Próximo</button>
         </form>
     </div>
+
+    <script src="./script.js" defer></script>
 </body>
 
 </html>
