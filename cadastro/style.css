@@ -96,6 +96,12 @@ a:hover #back{
     margin: 2.7rem auto 0 auto;
 }
 
+.container-form2{
+    width: 20%;
+    max-width: 900px;
+    margin: 2.7rem auto 0 auto;
+}
+
 #email{
     margin-bottom: 1.4rem;
 }
@@ -193,6 +199,13 @@ li:has(.ball.ok) .color-text {
 .input-container #password{
     color: #ffffff;
 }
+.input-container #name{
+    color: white;
+}
+.input-container #birth{
+    color: white;
+}
+
 
 .submit-button.disabled {
     background-color: gray;

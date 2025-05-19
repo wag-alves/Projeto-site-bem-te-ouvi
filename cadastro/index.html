@@ -71,6 +71,33 @@
         </form>
     </div>
 
+    <div class="container-form2">
+        <form action="" method="" autocomplete="on">
+            <div class="input-container">
+                <label for="name">Nome:</label><br>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="input-container">
+                <label for="birth">Data de nascimento:</label><br>
+                <input type="date" id="birth" name="birth" required>
+            </div>
+            <div class="input-container-gender">
+                <label for="gender">Gênero:</label><br>
+                <input type="radio" id="man" name="gender" required>
+                <label for="man">Homem</label>
+                <input type="radio" id="woman" name="gender" required>
+                <label for="woman">Mulher</label>
+                <input type="radio" id="non-binary" name="gender" required>
+                <label for="non-binary">Não-binário</label>
+                <input type="radio" id="personal" name="gender" required>
+                <label for="personal">Prefiro não informar</label>
+                <input type="radio" id="other" name="gender" required>
+                <label for="other">Outro</label>
+            </div>
+            <button type="submit" class="submit-button">Próximo</button>
+        </form>
+    </div>
+
     <script src="./script.js" defer></script>
 </body>
 
