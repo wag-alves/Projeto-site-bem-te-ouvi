@@ -90,6 +90,12 @@ a:hover #back{
     margin: 0 auto;
 }
 
+.container2 {
+    width: 35%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
 .container-form1{
     width: 20%;
     max-width: 900px;
@@ -104,6 +110,7 @@ a:hover #back{
 
 #email{
     margin-bottom: 1.4rem;
+    color: #ffffff;
 }
 
 .input-container input {
@@ -193,17 +200,67 @@ li:has(.ball.ok) .color-text {
     background-image: url(./imagens/Approval.png);
 }
 
-.input-container #email{
-    color: #ffffff;
-}
 .input-container #password{
     color: #ffffff;
 }
+
 .input-container #name{
     color: white;
+    margin-bottom: 1.4rem;
 }
-.input-container #birth{
+
+.input-container #cpf{
+    margin-bottom: 1.4rem;
     color: white;
+}
+.input-container #pix{
+    margin-bottom: 1.4rem;
+    color: white;
+}
+
+.input-container #birth{
+    text-align: center;
+    color: white;
+    margin-bottom: 1.4rem;
+}
+
+.input-container-gender{
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+
+}
+
+.input-container-gender label{
+    display: flex;
+    width: calc(50% - 10px); 
+    align-items: baseline;
+}
+
+#gender-label{
+    margin: 0.6rem 0 0.2rem 0.3rem;
+    font-size: 1rem;
+    color: white;
+}
+
+#perfil-label{
+    margin: 1.4rem 0 0.2rem 0.3rem;
+    font-size: 1rem;
+    color: white;
+}
+
+.radio-group{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    align-items: center;
+    width: 100%;
+    padding-bottom: 1.4rem;
+}
+
+#input-container-publish {
+    transition: all 1.3s ease-in-out;
 }
 
 

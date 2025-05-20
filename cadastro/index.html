@@ -12,7 +12,7 @@
     <div id="container-bird">
         <img src="./imagens/Bird.png" alt="imagem de um pássaro" id="bird">
     </div>
-    <h1>Entrar no Bem-te-ouvi</h1>
+    <h1 class="enter-name">Entrar no Bem-te-ouvi</h1>
     <hr>
 
     <div class="progress-container">
@@ -20,6 +20,7 @@
         </div>
     </div>
 
+    <!-- PÁGINA 1 -->
     <div class="container1">
         <div class="horizontal-line">
             <a href="./index.html">
@@ -71,7 +72,21 @@
         </form>
     </div>
 
-    <div class="container-form2">
+
+    <!-- PÁGINA 2 -->
+    <div class="container2" style="display: none;">
+        <div class="horizontal-line">
+            <a href="./index.html">
+                <img src="./imagens/back.png" alt="imagem de voltar" id="back">
+            </a>
+            <div class="text-container">
+                <h3>Etapa 2 de 3</h3>
+                <h3>Sobre você</h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-form2" style="display: none;">
         <form action="" method="" autocomplete="on">
             <div class="input-container">
                 <label for="name">Nome:</label><br>
@@ -81,18 +96,30 @@
                 <label for="birth">Data de nascimento:</label><br>
                 <input type="date" id="birth" name="birth" required>
             </div>
+            <p id="gender-label">Gênero:</p>
             <div class="input-container-gender">
-                <label for="gender">Gênero:</label><br>
-                <input type="radio" id="man" name="gender" required>
-                <label for="man">Homem</label>
-                <input type="radio" id="woman" name="gender" required>
-                <label for="woman">Mulher</label>
-                <input type="radio" id="non-binary" name="gender" required>
-                <label for="non-binary">Não-binário</label>
-                <input type="radio" id="personal" name="gender" required>
-                <label for="personal">Prefiro não informar</label>
-                <input type="radio" id="other" name="gender" required>
-                <label for="other">Outro</label>
+                <label for="man"><input type="radio" id="man" name="gender" required>Homem</label>
+                <label for="woman"><input type="radio" id="woman" name="gender" required>Mulher</label>
+                <label for="non-binary"><input type="radio" id="non-binary" name="gender" required>Não-binário</label>
+                <label for="other"><input type="radio" id="other" name="gender" required>Outro</label>
+                <label for="personal"><input type="radio" id="personal" name="gender" required>Prefiro não informar</label>
+            </div>
+            <p id="perfil-label">Perfil:</p>
+            <div class="radio-group">
+                <label><input type="radio" name="perfil" value="ouvir" class="hear" checked> Quero ouvir música</label><br>
+                <label><input type="radio" name="perfil" value="publicar" class="publish"> Quero publicar minhas músicas</label>
+            </div>
+
+            <!-- Inputs extras que serão mostrados apenas se "publicar" for selecionado -->
+            <div id="input-container-publish" style="display: none;">
+                <div class="input-container">
+                    <label for="cpf">CPF:</label><br>
+                    <input type="text" id="cpf" name="cpf" placeholder="000.000.000-00">
+                </div>
+                <div class="input-container">
+                    <label for="pix">Chave Pix:</label><br>
+                    <input type="text" id="pix" name="pix" placeholder="Email, CPF ou número">
+                </div>
             </div>
             <button type="submit" class="submit-button">Próximo</button>
         </form>
