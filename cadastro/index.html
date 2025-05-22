@@ -32,7 +32,7 @@
             </div>
         </div>
     </div>
-
+    
     <!-- AQUI COMEÇA PRIMEIRO FORMULÁRIO -->
     <div class="container-form1 active">
         <form class="form1" method="" autocomplete="on">
@@ -71,12 +71,12 @@
             <button type="button" class="submit-button">Próximo</button>
         </form>
     </div>
-
-
+    
+    
     <!-- PÁGINA 2 -->
     <div class="container2" style="display: none;">
         <div class="horizontal-line">
-            <a href="./index.html">
+            <a href="#" id="back-step1">
                 <img src="./imagens/back.png" alt="imagem de voltar" id="back">
             </a>
             <div class="text-container">
@@ -85,7 +85,7 @@
             </div>
         </div>
     </div>
-
+    
     <div class="container-form2" style="display: none;">
         <form action="" method="" autocomplete="on">
             <div class="input-container">
@@ -102,31 +102,56 @@
                 <label for="woman"><input type="radio" id="woman" name="gender" required>Mulher</label>
                 <label for="non-binary"><input type="radio" id="non-binary" name="gender" required>Não-binário</label>
                 <label for="other"><input type="radio" id="other" name="gender" required>Outro</label>
-                <label for="personal"><input type="radio" id="personal" name="gender" required>Prefiro não
-                    informar</label>
+                <label for="personal"><input type="radio" id="personal" name="gender" checked>Prefiro não informar</label>
             </div>
             <p id="perfil-label">Perfil:</p>
             <div class="radio-group">
                 <label><input type="radio" name="perfil" value="ouvir" class="hear" checked> Quero ouvir
                     música</label><br>
-                <label><input type="radio" name="perfil" value="publicar" class="publish"> Quero publicar minhas
-                    músicas</label>
+                    <label><input type="radio" name="perfil" value="publicar" class="publish"> Quero publicar minhas
+                        músicas</label>
+                    </div>
+                    
+                    <!-- Inputs extras que serão mostrados apenas se "publicar" for selecionado -->
+                    <div id="input-container-publish" style="display: none;">
+                        <div class="input-container">
+                            <label for="cpf">CPF:</label><br>
+                            <input type="text" id="cpf" name="cpf" placeholder="000.000.000-00">
+                        </div>
+                        <div class="input-container">
+                            <label for="pix">Chave Pix:</label><br>
+                            <input type="text" id="pix" name="pix" placeholder="Email, CPF ou número">
+                        </div>
+                    </div>
+                    <button type="button" class="submit-button2">Próximo</button>
+                </form>
             </div>
-
-            <!-- Inputs extras que serão mostrados apenas se "publicar" for selecionado -->
-            <div id="input-container-publish" style="display: none;">
-                <div class="input-container">
-                    <label for="cpf">CPF:</label><br>
-                    <input type="text" id="cpf" name="cpf" placeholder="000.000.000-00">
-                </div>
-                <div class="input-container">
-                    <label for="pix">Chave Pix:</label><br>
-                    <input type="text" id="pix" name="pix" placeholder="Email, CPF ou número">
+            
+            <!-- PÁGINA 3 -->
+            
+            <div class="container3" style="display: none;">
+                <div class="horizontal-line">
+                    <a href="#" id="back-step2">
+                        <img src="./imagens/back.png" alt="imagem de voltar" id="back">
+                    </a>
+                    <div class="text-container">
+                        <h3>Etapa 3 de 3</h3>
+                        <h3>Termos e condições</h3>
+                    </div>
                 </div>
             </div>
-            <button type="button" class="submit-button2">Próximo</button>
-        </form>
-    </div>
+            
+            
+            <div class="container-form3" style="display: none;">
+                <form action="" method="">
+                    <div class="input-container3">
+                        <label for="termo-uso1"><input type="checkbox" id="termo-uso1" name="termo-uso">Não quero receber mensagens</label>
+                        <label for="termo-uso2"><input type="checkbox" id="termo-uso2" name="termo-uso" checked>Usar meus dados para a melhoria contínua do site</label>
+                        <label for="termo-uso3"><input type="checkbox" id="termo-uso3" name="termo-uso" checked>Eu concordo com os termos de condições de uso do Bem-te-ouvi</label>
+                    </div>
+                    <button type="button" class="submit-button3">Próximo</button>
+                </form>
+            </div>
 
     <script src="./script.js" defer></script>
 </body>

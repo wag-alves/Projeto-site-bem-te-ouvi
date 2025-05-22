@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const passwordInput = document.getElementById("password");
   const submitButton = document.querySelector(".submit-button");
   const submitButton2 = document.querySelector(".submit-button2");
+  const submitButton3 = document.querySelector(".submit-button3");
   const publicar = document.querySelector(".publish");
   const ouvir = document.querySelector(".hear");
   const cpf = document.getElementById("cpf");
@@ -10,14 +11,16 @@ document.addEventListener("DOMContentLoaded", function () {
   const email = document.getElementById("email");
   const ancora1 = document.querySelector(".container1");
   const ancora2 = document.querySelector(".container2");
+  const ancora3 = document.querySelector(".container3");
   const formulario1 = document.querySelector(".container-form1");
   const formulario2 = document.querySelector(".container-form2");
+  const formulario3 = document.querySelector(".container-form3");
   const nomeEntrar = document.querySelector(".enter-name");
   const migalha = document.querySelector(".progress-bar");
   const nome = document.getElementById("name");
   const niver = document.getElementById("birth");
 
-    // Critérios de validação
+  // Critérios de validação
     const criteria = {
       letter: {
         test: value => /[a-zA-Z]/.test(value)
@@ -89,7 +92,8 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    
+
+
     function verifica(){
       if(nome.checkValidity() && niver.checkValidity()){
         submitButton2.disabled = false;
@@ -100,10 +104,87 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     };
 
+
+
+    document.getElementById("back-step2").addEventListener("click", function(event) {
+      event.preventDefault(); // evita navegação padrão
+
+      ancora2.classList.remove("disable");
+      ancora2.classList.add("active");
+
+      formulario2.classList.remove("disable");
+      formulario2.classList.add("active");
+
+      // Remove "disable" e adiciona "active" no segundo container e formulário
+      ancora3.classList.remove("active");
+      ancora3.classList.add("disable");
+
+      formulario3.classList.remove("active");
+      formulario3.classList.add("disable");
+
+      nomeEntrar.style.visibility = "hidden";
+
+      migalha.style.width = "66.66%";
+    });
+
+    document.getElementById("back-step1").addEventListener("click", function(event) {
+      event.preventDefault(); // evita navegação padrão
+
+      ancora1.classList.remove("disable");
+      ancora1.classList.add("active");
+
+      formulario1.classList.remove("disable");
+      formulario1.classList.add("active");
+
+      // Remove "disable" e adiciona "active" no segundo container e formulário
+      ancora2.classList.remove("active");
+      ancora2.classList.add("disable");
+
+      formulario2.classList.remove("active");
+      formulario2.classList.add("disable");
+
+      nomeEntrar.style.visibility = "Visible";
+
+      migalha.style.width = "33.33%";
+    });
+
+
+
+
+
+
+
+    // ETAPA 3
+    submitButton2.addEventListener("click", function (event) {
+      event.preventDefault();
+
+      // Remove "active" e adiciona "disable" no segundo container e formulário
+      ancora2.classList.remove("active");
+      ancora2.classList.add("disable");
+
+      formulario2.classList.remove("active");
+      formulario2.classList.add("disable");
+
+      // Remove "disable" e adiciona "active" no terceiro container e formulário
+      ancora3.classList.remove("disable");
+      ancora3.classList.add("active");
+
+      formulario3.classList.remove("disable");
+      formulario3.classList.add("active");
+
+      nomeEntrar.style.visibility = "hidden";
+
+      migalha.style.width = "100%";
+    });
+
+
+
     nome.addEventListener("input", verifica);
     niver.addEventListener("input", verifica);
 
 
+
+    // ETAPA 1
     submitButton.addEventListener("click", function (event) {
       event.preventDefault();
 
@@ -169,5 +250,7 @@ document.addEventListener("DOMContentLoaded", function () {
     submitButton.classList.add("disabled");
     submitButton2.disabled = true;
     submitButton2.classList.add("disabled");
+    submitButton3.disabled = true;
+    submitButton3.classList.add("disabled");
   });
   
