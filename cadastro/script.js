@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const form = document.querySelector("form");
+  const form = document.querySelector(".form1");
   const passwordInput = document.getElementById("password");
   const submitButton = document.querySelector(".submit-button");
   const submitButton2 = document.querySelector(".submit-button2");
@@ -14,6 +14,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const formulario2 = document.querySelector(".container-form2");
   const nomeEntrar = document.querySelector(".enter-name");
   const migalha = document.querySelector(".progress-bar");
+  const nome = document.getElementById("name");
+  const niver = document.getElementById("birth");
 
     // Critérios de validação
     const criteria = {
@@ -83,41 +85,83 @@ document.addEventListener("DOMContentLoaded", function () {
 
     form.addEventListener("submit", function (event) {
         if (!isPasswordValid(passwordInput.value)) {
-            event.preventDefault();
+            event.preventDefault(); //impede o envio do formulário
         }
     });
+
+    
+    function verifica(){
+      if(nome.checkValidity() && niver.checkValidity()){
+        submitButton2.disabled = false;
+        submitButton2.classList.remove("disabled");
+      } else{
+        submitButton2.disabled = true;
+        submitButton2.classList.add("disabled");
+      }
+    };
+
+    nome.addEventListener("input", verifica);
+    niver.addEventListener("input", verifica);
 
 
     submitButton.addEventListener("click", function (event) {
       event.preventDefault();
 
-      ancora1.classList.remove("active", "disable");
+      // Remove "active" e adiciona "disable" no primeiro container e formulário
+      ancora1.classList.remove("active");
       ancora1.classList.add("disable");
 
-      ancora2.classList.remove("active", "disable");
+      formulario1.classList.remove("active");
+      formulario1.classList.add("disable");
+
+      // Remove "disable" e adiciona "active" no segundo container e formulário
+      ancora2.classList.remove("disable");
       ancora2.classList.add("active");
+
+      formulario2.classList.remove("disable");
+      formulario2.classList.add("active");
 
       nomeEntrar.style.visibility = "hidden";
 
-      formulario1.classList.remove("active", "disable");
-      formulario1.classList.add("disable");
-
-      formulario2.classList.remove("active", "disable");
-      formulario2.classList.add("active");
-
       migalha.style.width = "66.66%";
-  });
+    });
 
 
-    // submitButton.addEventListener("click", function (event) {
-    //   event.preventDefault(); // <-- PREVINE o envio do formulário e recarregamento
-    //   ancora1.classList.add("disable");
-    //   ancora2.classList.add("active");
-    //   nomeEntrar.style.visibility = "hidden";
-    //   formulario1.classList.add("disable");
-    //   formulario2.classList.add("active");
-    //   migalha = migalha.style.width = "66.66%";
-    // });
+
+
+    // const generoInputs = document.querySelectorAll('input[name="gender"]');
+
+
+  //   submitButton.addEventListener("click", function (event) {
+  //     event.preventDefault();
+
+  //     // ancora1.classList.remove("active", "disable");
+  //     ancora1.classList.add("disable");
+
+  //     // ancora2.classList.remove("active", "disable");
+  //     ancora2.classList.add("active");
+
+  //     nomeEntrar.style.visibility = "hidden";
+
+  //     // formulario1.classList.remove("active", "disable");
+  //     formulario1.classList.add("disable");
+
+  //     // formulario2.classList.remove("active", "disable");
+  //     formulario2.classList.add("active");
+
+  //     migalha.style.width = "66.66%";
+  // });
+
+
+    //  submitButton.addEventListener("click", function (event) {
+    //    event.preventDefault(); // <-- PREVINE o envio do formulário e recarregamento
+    //    ancora1.classList.add("disable");
+    //    ancora2.classList.add("active");
+    //    nomeEntrar.style.visibility = "hidden";
+    //    formulario1.classList.add("disable");
+    //    formulario2.classList.add("active");
+    //    migalha.style.width = "66.66%";
+    //  });
 
   
     // Estado inicial do botão
