@@ -206,44 +206,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
       migalha.style.width = "66.66%";
     });
-
-
-
-
-    // const generoInputs = document.querySelectorAll('input[name="gender"]');
-
-
-  //   submitButton.addEventListener("click", function (event) {
-  //     event.preventDefault();
-
-  //     // ancora1.classList.remove("active", "disable");
-  //     ancora1.classList.add("disable");
-
-  //     // ancora2.classList.remove("active", "disable");
-  //     ancora2.classList.add("active");
-
-  //     nomeEntrar.style.visibility = "hidden";
-
-  //     // formulario1.classList.remove("active", "disable");
-  //     formulario1.classList.add("disable");
-
-  //     // formulario2.classList.remove("active", "disable");
-  //     formulario2.classList.add("active");
-
-  //     migalha.style.width = "66.66%";
-  // });
-
-
-    //  submitButton.addEventListener("click", function (event) {
-    //    event.preventDefault(); // <-- PREVINE o envio do formulário e recarregamento
-    //    ancora1.classList.add("disable");
-    //    ancora2.classList.add("active");
-    //    nomeEntrar.style.visibility = "hidden";
-    //    formulario1.classList.add("disable");
-    //    formulario2.classList.add("active");
-    //    migalha.style.width = "66.66%";
-    //  });
-
   
     // Estado inicial do botão
     submitButton.disabled = true;

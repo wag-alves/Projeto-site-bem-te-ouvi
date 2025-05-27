@@ -19,12 +19,25 @@ body{
     margin-top: 1.6rem;
     width: 4rem;
     transition: transform 0.3s ease-in-out;
+    transition: filter 0.3s ease-in-out;
 }
 
 #bird:hover{
     transform: scale(1.06);
     filter: brightness(1.1);
 } 
+
+button:hover{
+    filter: brightness(1.3);
+}
+
+input{
+    transition: transform 0.2s ease-in-out;
+}
+
+input:hover{
+    outline: 1px solid white !important;
+}
 
 h1{
     text-align: center;
@@ -128,20 +141,20 @@ a:hover #back{
 .input-container input {
     width: 100%;
     border: none;
-    outline: 1px solid white;
+    outline: 1px solid rgba(219, 219, 219, 0.826);
     margin-top: 0.1rem;
     padding: 0.5rem 0.4rem; /* padding horizontal mais equilibrado */
     border-radius: 0.3rem;
     font-size: 1rem;
     box-sizing: border-box;
     text-align: left; /* garante alinhamento do texto/placeholder */
-    background-color: rgba(112, 112, 112, 0.017);
+    background-color: rgba(112, 112, 112, 0.010);
     transition: all 450ms ease-in-out;
 }
 
 .input-container input:focus-within {
     outline: 1px solid #5ac8fa;
-    background-color: rgba(103, 103, 103, 0.258);
+    background-color: rgba(103, 103, 103, 0.09);
 }
 
   /* Placeholder personalizado (opcional) */
@@ -160,10 +173,12 @@ a:hover #back{
     padding: 0.7rem 1.5rem;
     border: none;
     border-radius: 2rem;
-    background-color: #5ac8fa;
+    background-color: #1b0e21b0;
     color: white;
     font-size: 1rem;
     cursor: pointer;
+    transition: filter 0.3s ease-in-out;
+
 }
 
 .submit-button2 {
@@ -171,10 +186,12 @@ a:hover #back{
     padding: 0.7rem 1.5rem;
     border: none;
     border-radius: 2rem;
-    background-color: #5ac8fa;
+    background-color: #1b0e21b0;
     color: white;
     font-size: 1rem;
     cursor: pointer;
+    transition: filter 0.3s ease-in-out;
+    margin-bottom: 9rem;
 }
 
 .submit-button3 {
@@ -182,11 +199,12 @@ a:hover #back{
     padding: 0.7rem 1.5rem;
     border: none;
     border-radius: 2rem;
-    background-color: #5ac8fa;
+    background-color: #1b0e21b0;
     color: white;
     font-size: 1rem;
     cursor: pointer;
     margin-top: 1.6rem;
+    transition: filter 0.3s ease-in-out;
 }
 
 .required-password{
@@ -264,13 +282,53 @@ li:has(.ball.ok) .color-text {
     display: flex;
     flex-wrap: wrap;
     gap: 0.4rem;
-
+    
 }
 
 .input-container-gender label{
     display: flex;
     width: calc(50% - 10px); 
     align-items: baseline;
+}
+
+
+.input-container-gender label input[type="radio"] {
+  /* 1. Remove a aparência padrão do navegador */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  /* 2. Estilos para o nosso rádio customizado (estado não marcado) */
+  width: 1rem;
+  height: 1rem;
+  padding-right: 0.8rem;
+  border: 2px solid #6b7280; /* Cinza médio para a borda (não marcado) */
+  border-radius: 50%;       /* Para fazer um círculo perfeito */
+  background-color: transparent; /* Fundo transparente quando não marcado */
+
+  margin-right: 10px; /* Espaço entre o botão de rádio e o texto do label */
+  outline: none;      /* Remove o outline padrão (adicionaremos um :focus-visible customizado) */
+  cursor: pointer;    /* Indica que é clicável */
+
+  /* 3. Transições suaves para mudanças de cor e sombra */
+  transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+/* 4. Estilos para o estado marcado (:checked) */
+.input-container-gender label input[type="radio"]:checked {
+  background-color: #5e98d734; /*Azul para o fundo quando marcado (preenche o círculo)*/
+  border-color: #3b82f6;     /* Mesma cor azul para a borda */
+}
+
+/* 5. Estilo de hover para inputs não marcados (feedback visual) */
+.input-container-gender label input[type="radio"]:not(:checked):hover {
+  border-color: #9ca3af; /* Cinza um pouco mais claro no hover */
+}
+
+/* 6. Estilo de foco para acessibilidade (importante!) */
+/* :focus-visible é usado para mostrar o foco apenas quando o usuário navega via teclado */
+.input-container-gender label input[type="radio"]:focus-visible {
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.4); /* Um "anel" azulado de foco */
 }
 
 #gender-label{
@@ -292,6 +350,66 @@ li:has(.ball.ok) .color-text {
     align-items: center;
     width: 100%;
     padding-bottom: 1.4rem;
+}
+
+
+.radio-group label {
+  display: flex; /* Alinha o input customizado e o texto verticalmente */
+  align-items: baseline;
+  cursor: pointer;
+  color: #ffffff; /* Cor do texto (branco para fundo escuro) - ajuste se o fundo for diferente */
+  font-size: 16px; /* Ajuste o tamanho da fonte conforme necessário */
+  -webkit-user-select: none; /* Evita seleção de texto ao clicar rápido */
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  /* Se você remover o <br> e não usar display:flex no .radio-group,
+     adicione um espaçamento inferior, exceto para o último. */
+  /* margin-bottom: 10px; */
+}
+/*
+.radio-group label:last-of-type {
+  margin-bottom: 0;
+}
+*/
+
+.radio-group label input[type="radio"] {
+  /* 1. Remove a aparência padrão do navegador */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  /* 2. Estilos para o nosso rádio customizado (estado não marcado) */
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid #6b7280; /* Cinza médio para a borda (não marcado) */
+  border-radius: 50%;       /* Para fazer um círculo perfeito */
+  background-color: transparent; /* Fundo transparente quando não marcado */
+
+  margin-right: 10px; /* Espaço entre o botão de rádio e o texto do label */
+  outline: none;      /* Remove o outline padrão (adicionaremos um :focus-visible customizado) */
+  cursor: pointer;    /* Indica que é clicável */
+
+  /* 3. Transições suaves para mudanças de cor e sombra */
+  transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+/* 4. Estilos para o estado marcado (:checked) */
+.radio-group label input[type="radio"]:checked {
+  background-color: #5e98d734; /* Azul para o fundo quando marcado (preenche o círculo) */
+  border-color: #3b82f6;     /* Mesma cor azul para a borda */
+}
+
+/* 5. Estilo de hover para inputs não marcados (feedback visual) */
+.radio-group label input[type="radio"]:not(:checked):hover {
+  border-color: #9ca3af; /* Cinza um pouco mais claro no hover */
+}
+
+/* 6. Estilo de foco para acessibilidade (importante!) */
+/* :focus-visible é usado para mostrar o foco apenas quando o usuário navega via teclado */
+.radio-group label input[type="radio"]:focus-visible {
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.4); /* Um "anel" azulado de foco */
 }
 
 #input-container-publish {
@@ -317,6 +435,7 @@ li:has(.ball.ok) .color-text {
     cursor: not-allowed;
     opacity: 0.6;
 }
+
 
 .input-container input:-webkit-autofill {
     box-shadow: 0 0 0px 1000px rgba(112, 112, 112, 0.017) inset !important;
@@ -348,7 +467,7 @@ li:has(.ball.ok) .color-text {
 }
 
 .input-container3 label:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.050);
 }
 
 .input-container3 input[type="checkbox"] {
@@ -378,4 +497,71 @@ li:has(.ball.ok) .color-text {
     border: solid black;
     border-width: 0 2px 2px 0;
     transform: rotate(45deg);
+}
+
+input{
+    box-shadow: 2px 5px 8px rgba(0, 0, 0, 0.137);
+}
+.input-container-gender input{
+    box-shadow: none;
+    outline: none !important;
+}
+.radio-group .publish{
+    outline: none !important;
+    box-shadow: none;
+}
+.radio-group .hear{
+    box-shadow: none;
+    outline: none !important;
+}
+.input-container3 label{
+    box-shadow: 2px 5px 8px rgba(0, 0, 0, 0.137);
+}
+.input-container3 #termo-uso1,#termo-uso2,#termo-uso3{
+    outline: none !important;
+    box-shadow: none;
+}
+
+/* ===== NOVO EXEMPLO: SCROLLBAR SUTIL PARA TEMA ESCURO ===== */
+
+html {
+  /* Mantém o espaço da barra de rolagem sempre visível para evitar "saltos" no layout */
+  overflow-y: scroll;
+
+  /* --- Para Firefox --- */
+  scrollbar-width: thin; /* Deixa a barra de rolagem mais fina */
+  /* Cores: CorDoPolegar CorDoTrilho */
+  scrollbar-color: #555555 #2e2e2e; /* Polegar cinza médio, Trilho cinza bem escuro */
+}
+
+/* --- Para navegadores baseados no WebKit (Chrome, Safari, Edge mais recente) --- */
+
+html::-webkit-scrollbar {
+  width: 8px;  /* Largura da barra de rolagem vertical (mais fina) */
+  height: 8px; /* Altura da barra de rolagem horizontal */
+}
+
+html::-webkit-scrollbar-track {
+  background: #2e2e2e; /* Cor de fundo bem escura para o trilho, quase se misturando */
+  /* Você pode adicionar border-radius se quiser cantos arredondados, ex: border-radius: 4px; */
+}
+
+html::-webkit-scrollbar-thumb {
+  background-color: #555555; /* Cinza médio para o polegar */
+  border-radius: 4px;      /* Cantos levemente arredondados para o polegar */
+  /* Opcional: uma borda sutil se precisar de mais definição, mas pode remover para simplicidade */
+  /* border: 1px solid #1c1c1c; */
+}
+
+html::-webkit-scrollbar-thumb:hover {
+  background-color: #777777; /* Um tom de cinza um pouco mais claro para o hover */
+}
+
+.input-container input:-webkit-autofill,
+.input-container input:-webkit-autofill:hover,
+.input-container input:-webkit-autofill:focus,
+.input-container input:-webkit-autofill:active { /* Adicionei os outros estados aqui também */
+    -webkit-box-shadow: 0 0 0 1000px rgba(112, 112, 112, 0.010) inset !important; /* Teste com VERMELHO */
+    -webkit-text-fill-color: rgb(255, 255, 255) !important; /* Teste com VERDE LIMÃO */
+    transition: background-color 5000s ease-in-out 0s;
 }
